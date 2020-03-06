@@ -8,23 +8,6 @@
 
 import UIKit
 
-class Object: NSObject {
-    var view: UIView?
-    var count: Int = 10
-    init(_ v: UIView?) {
-        self.view = v
-        super.init()
-    }
-}
-
-struct kStruct {
-    var view: UIView?
-    init(_ v: UIView?) {
-        self.view = v
-    }
-}
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -34,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
-        var l1 = ListNode.generateTestData([1,2,3,4])
+        var l1 = ListNode.generateTestData([1,2,3])
         
-        var l3 = Solution3.swapPairs(l1)
+        var l3 = Solution4.rotateRight(l1, 4)
         l3?.logListNode()
         
         

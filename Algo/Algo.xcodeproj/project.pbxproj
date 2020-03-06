@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844F1E432412504E00F5076B /* Topic4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F1E422412504E00F5076B /* Topic4.swift */; };
 		84675F862410A9C200DDA827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84675F852410A9C200DDA827 /* AppDelegate.swift */; };
 		84675F882410A9C200DDA827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84675F872410A9C200DDA827 /* SceneDelegate.swift */; };
 		84675F8A2410A9C200DDA827 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84675F892410A9C200DDA827 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		844F1E422412504E00F5076B /* Topic4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic4.swift; sourceTree = "<group>"; };
 		84675F822410A9C200DDA827 /* Algo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84675F852410A9C200DDA827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84675F872410A9C200DDA827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				84675F9C2410AE5400DDA827 /* Topic1.swift */,
 				84675F9E24120FEF00DDA827 /* Topic2.swift */,
 				84675FA02412192900DDA827 /* Topic3.swift */,
+				844F1E422412504E00F5076B /* Topic4.swift */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				84675F9F24120FEF00DDA827 /* Topic2.swift in Sources */,
 				84675F862410A9C200DDA827 /* AppDelegate.swift in Sources */,
+				844F1E432412504E00F5076B /* Topic4.swift in Sources */,
 				84675FA12412192900DDA827 /* Topic3.swift in Sources */,
 				84675F882410A9C200DDA827 /* SceneDelegate.swift in Sources */,
 				84675F9D2410AE5400DDA827 /* Topic1.swift in Sources */,
