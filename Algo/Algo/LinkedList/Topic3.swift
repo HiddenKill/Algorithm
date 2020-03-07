@@ -21,6 +21,12 @@ import Foundation
  给定 1->2->3->4, 你应该返回 2->1->4->3.
  */
 
+/*
+ 解题思路:
+    看注释
+    这道题主要是画图，next是在动态变化，提前将slow的next变为fast.next打破循环即可
+ */
+
 
 public class Solution3 {
     

@@ -25,7 +25,11 @@ public class ListNode {
             tmp = "\(tmp)\(s)"
             node = node!.next
         }
-        debugPrint(tmp)
+        if tmp != "" {
+            debugPrint(tmp)
+        } else {
+            debugPrint("null List Node")
+        }
     }
     
     public static func generateTestData(_ array: [Int]) -> ListNode? {

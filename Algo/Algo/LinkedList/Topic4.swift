@@ -33,6 +33,13 @@ import Foundation
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+/*
+ 解题思路：
+ 1. 将链表的尾结点指向头结点形成闭环
+ 2. 在形成闭环的过程中同时遍历了一遍，拿到了链表的长度length
+ 3. 根据链表长度和右旋转次数在遍历一次将第count-1-k个节点的next致为nil打破闭环即可
+ */
+
 public class Solution4 {
     public static func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
         if head == nil || k < 0 {
@@ -55,7 +62,7 @@ public class Solution4 {
         
         var cur = head
         var newHead = head
-        for i in 0..<count-1-kk {
+        for _ in 0..<count-1-kk {
             cur = cur?.next
         }
         newHead = cur?.next

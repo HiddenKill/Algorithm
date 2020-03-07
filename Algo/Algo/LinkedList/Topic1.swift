@@ -22,6 +22,12 @@ import Foundation
 
 */
 
+/*
+ 解题思路:
+        双指针提前将fast右移2次
+        slow和fast同时右移，此时当fast.next == nil时slow.next = slow.next.next即可
+ */
+
 
 class Solution {
     class func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
@@ -47,24 +53,6 @@ class Solution {
         slow?.next = slow?.next?.next
         
         return dummy.next
-    }
-    
-    class public func generateTestData() -> ListNode {
-        let n0 = ListNode(0)
-        let n1 = ListNode(1)
-        let n2 = ListNode(2)
-        let n3 = ListNode(3)
-        let n4 = ListNode(4)
-        let n5 = ListNode(5)
-        let n6 = ListNode(6)
-
-        n0.next = n1
-        n1.next = n2
-        n2.next = n3
-        n3.next = n4
-        n4.next = n5
-        n5.next = n6
-        return n0
     }
     
 }
