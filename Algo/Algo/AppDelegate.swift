@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
-        var l1 = ListNode.generateTestData([1,2,3,3,4,4,5])
+        var l1 = ListNode.generateTestData([1,4,3,2,5,2])
         
-        var l3 = Solution5.deleteDuplicates(l1)
+        var l3 = Solution7.partition(l1, 3)
         l3?.logListNode()
         
         

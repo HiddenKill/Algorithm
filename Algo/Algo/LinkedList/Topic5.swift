@@ -41,7 +41,7 @@ public class Solution5 {
             return head
         }
         // 初始化虚拟头结点
-        var dummy: ListNode? = ListNode(-100000)
+        var dummy: ListNode? = ListNode(head!.val+1)
         // 虚拟头结点指针
         var ptr: ListNode? = dummy
         
