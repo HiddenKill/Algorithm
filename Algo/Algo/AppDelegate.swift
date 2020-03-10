@@ -17,11 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
-        var l1 = ListNode.generateTestData([1,4,3,2,5,2])
-        
-        var l3 = Solution7.partition(l1, 3)
-        l3?.logListNode()
-        
+        let a = UsualSort.inserSort([1])
+        debugPrint(a)
         
         
         return true
