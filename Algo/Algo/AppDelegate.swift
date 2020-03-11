@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
-        let a = UsualSort.inserSort([1])
+        let a = UsualSort.shellSort([9,7,5,3,1])
         debugPrint(a)
         
         

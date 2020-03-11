@@ -148,10 +148,8 @@ public class UsualSort {
     // （2）但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位
     static func shellSort(_ array: [Int]) -> [Int] {
         var tmp = array
-        
-        
-        
-        return array
+       
+        return tmp
     }
     
     
