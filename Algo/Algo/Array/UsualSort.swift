@@ -6,7 +6,7 @@
 //  Copyright © 2020 cxz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class UsualSort {
     
@@ -113,6 +113,7 @@ public class UsualSort {
                     left = mid + 1
                 }
             }
+            // 后移操作
             for j in stride(from: i-1, through: left, by: -1) {
                 tmp[j+1] = tmp[j]
             }
@@ -134,8 +135,26 @@ public class UsualSort {
                     return mid
              }
         }
+        
         return -1
     }
+    
+    // 希尔排序  (递减增量排序) 稳定性: 不稳定
+    // 时间复杂度 最优： O(n)  最差：O(n(logn)²)  平均时间复杂度： 由步长确定
+    // 空间复杂度 ： O(1)
+    
+    //  希尔排序是基于插入排序的以下两点性质而提出改进方法的：
+    // （1）插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率
+    // （2）但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位
+    static func shellSort(_ array: [Int]) -> [Int] {
+        var tmp = array
+        
+        
+        
+        return array
+    }
+    
+    
     
     
     
