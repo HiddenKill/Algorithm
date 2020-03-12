@@ -83,15 +83,12 @@ public class UsualSort {
         
         for i in 1..<tmp.count {
             let cur = tmp[i]
-            for j in stride(from: i-1, through: 0, by: -1) {
-                if tmp[j] > cur {
-                    tmp[j+1] = tmp[j]
-                }
-                if tmp[j] < cur {
-                    tmp[j+1] = cur
-                    break
-                }
+            var j = i-1
+            while j >= 0 && tmp[j] > cur {
+                tmp[j+1] = tmp[j]
+                j -= 1
             }
+            tmp[j+1] = cur
         }
         return tmp
     }
@@ -148,13 +145,70 @@ public class UsualSort {
     // （2）但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位
     static func shellSort(_ array: [Int]) -> [Int] {
         var tmp = array
-       
+        var gap: Int = tmp.count/2
+        while gap >= 1 {
+            var start = 0
+            while start <= gap {
+                for i in stride(from: start+gap, to: tmp.count, by: gap) {
+                    let cur = tmp[i]
+                    // j是小于cur的index
+                    var j = i-gap
+                    while j >= 0 && tmp[j] > cur {
+                        tmp[j+gap] = tmp[j]
+                        j -= gap
+                    }
+                    tmp[j+gap] = cur
+                }
+                start += 1
+            }
+            gap = gap / 2
+        }
         return tmp
     }
     
+    // 归并排序 -> (分为递归实现和非递归实现) 稳定性: 稳定
+    // 时间复杂度 最优： O(nlogn)  最差：O(nlogn)  平均时间复杂度： O(nlogn)
+    // 空间复杂度 ： O(n)
+    static func mergeSort(_ array: [Int]) -> [Int] {
+        guard array.count > 1 else {
+            return array
+        }
+        
+        let mid = array.count / 2
+        let left = mergeSort(Array(array[0..<mid]))
+        let right = mergeSort(Array(array[mid..<array.count]))
+        
+        return self.merge(left, right)
+    }
     
-    
-    
-    
+    static private func merge(_ leftArr: [Int], _ rightArr: [Int]) -> [Int] {
+        var tmp = [Int]()
+        
+        var leftIndex = 0, rightIndex = 0
+        
+        while leftIndex < leftArr.count && rightIndex < rightArr.count {
+            var cur = 0
+            if leftArr[leftIndex] <= rightArr[rightIndex] {
+                cur = leftArr[leftIndex]
+                leftIndex+=1
+            } else {
+                cur = rightArr[rightIndex]
+                rightIndex+=1
+            }
+            tmp.append(cur)
+        }
+        
+        while leftIndex < leftArr.count {
+            tmp.append(leftArr[leftIndex])
+            leftIndex += 1
+        }
+        
+        while rightIndex < rightArr.count {
+            tmp.append(rightArr[rightIndex])
+            rightIndex += 1
+        }
+        
+        return tmp
+    }
     
 }
