@@ -132,7 +132,6 @@ public class UsualSort {
                     return mid
              }
         }
-        
         return -1
     }
     
@@ -209,6 +208,41 @@ public class UsualSort {
         }
         
         return tmp
+    }
+    
+    // 堆排序 平均情况O(nlogn) 最好情况 O(nlogn) 最差情况 O(nlogn)
+    // 空间复杂度 O(1)
+    // 稳定性： 不稳定
+    static func heapSort(_ array: inout [Int]) {
+        // 自最后一个非叶子节点开始倒序遍历，直至构建成最大堆
+        for i in (0...array.count/2-1).reversed() {
+            self.buildMaxHeap(&array, i: i, count: array.count)
+        }
+        // 将Array(0)与最后一个节点交换，得到最大值，同时去掉最后一个已经排序好的最大值，将剩余节点继续构建最大堆
+        // 自上而下重新构建最大堆，因为此时除了堆顶节点，其余节点满足最大堆的定义
+        for i in (1...array.count-1).reversed() {
+            // 交换最大值与最后一个节点
+            (array[0], array[i]) = (array[i], array[0])
+            // 除去最后一个node然后继续构建最大堆
+            self.buildMaxHeap(&array, i: 0, count: i)
+        }
+    }
+    
+    // 构建最大堆
+    static func buildMaxHeap(_ array: inout [Int], i: Int, count: Int) {
+        var max = i
+        let left = 2*i+1
+        let right = 2*i+2
+        if left < count && array[left] > array[max] {
+            max = left
+        }
+        if right < count && array[right] > array[max] {
+            max = right
+        }
+        if max != i {
+            (array[i], array[max]) = (array[max], array[i])
+            buildMaxHeap(&array, i: max, count: count)
+        }
     }
     
 }

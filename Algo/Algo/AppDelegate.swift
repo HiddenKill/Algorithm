@@ -14,12 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let a = UsualSort.mergeSort([9,1,8,2,7])
-        debugPrint(a)
-        
-        for i in (0..<10).reversed() {
-            debugPrint(i)
-        }
+        var arr = [5, 2, 9, 4, 7, 6, 1, 3, 8]
+        UsualSort.heapSort(&arr)
+        debugPrint(arr)
                 
         return true
     }
