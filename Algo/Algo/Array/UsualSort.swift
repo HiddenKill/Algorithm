@@ -142,27 +142,22 @@ public class UsualSort {
     //  希尔排序是基于插入排序的以下两点性质而提出改进方法的：
     // （1）插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率
     // （2）但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位
-    static func shellSort(_ array: [Int]) -> [Int] {
-        var tmp = array
-        var gap: Int = tmp.count/2
-        while gap >= 1 {
-            var start = 0
-            while start <= gap {
-                for i in stride(from: start+gap, to: tmp.count, by: gap) {
-                    let cur = tmp[i]
-                    // j是小于cur的index
-                    var j = i-gap
-                    while j >= 0 && tmp[j] > cur {
-                        tmp[j+gap] = tmp[j]
-                        j -= gap
+    static func shellSort(_ array: inout [Int]) {
+        var gap = array.count / 2
+        while gap >= 1  {
+            for i in 0..<gap {
+                for j in stride(from: i+gap, to: array.count, by: gap) {
+                    let cur = array[j]
+                    var k = j-gap
+                    while k >= 0 && array[k] > cur {
+                        array[k+gap] = array[k]
+                        k -= gap
                     }
-                    tmp[j+gap] = cur
+                    array[k+gap] = cur
                 }
-                start += 1
             }
             gap = gap / 2
         }
-        return tmp
     }
     
     // 归并排序 -> (分为递归实现和非递归实现) 稳定性: 稳定
@@ -213,6 +208,9 @@ public class UsualSort {
     // 堆排序 平均情况O(nlogn) 最好情况 O(nlogn) 最差情况 O(nlogn)
     // 空间复杂度 O(1)
     // 稳定性： 不稳定
+    // 1. 将无序数组创建成最大堆 (将所有非叶子节点自下向上，自右而左的递归遍历，将父节点和左右子节点的最大值放到父节点即可
+    // 2. 交换堆顶元素和数组最后一个元素
+    // 3. 重新构建最大堆 (此时是自顶向下递归构建，因为这时候A(1)或A(2)必定是最大元素之一，只需要将A(0)向下遍历知道变成最大堆即可
     static func heapSort(_ array: inout [Int]) {
         // 自最后一个非叶子节点开始倒序遍历，直至构建成最大堆
         for i in (0...array.count/2-1).reversed() {
@@ -229,6 +227,9 @@ public class UsualSort {
     }
     
     // 构建最大堆
+    // array: 原数组
+    // i: 当前遍历节点
+    // size: 需要遍历的数组的大小 (在交换A(0)和A(size-1)后 需要遍历的数组大小size--
     static func buildMaxHeap(_ array: inout [Int], i: Int, count: Int) {
         var max = i
         let left = 2*i+1
@@ -245,4 +246,37 @@ public class UsualSort {
         }
     }
     
+    
+    // 快速排序 quickSort
+    public static func quickSort(_ array: inout [Int]) {
+        if array.count <= 1 {
+            return
+        }
+        self.quick(&array, left: 0, right: array.count-1)
+    }
+    
+    static func quick(_ array: inout [Int], left: Int, right: Int) {
+        if left >= right {
+            return
+        }
+        // 基准值
+        let pivot = array[right]
+        var i = left, j = right
+        while i != j {
+            while array[i] <= pivot && i < j {
+                i+=1
+            }
+            while array[j] >= pivot && i < j {
+                j-=1
+            }
+            if i < j {
+                (array[i], array[j]) = (array[j], array[i])
+            }
+        }
+        array[right] = array[i]
+        array[i] = pivot
+        
+        self.quick(&array, left: left, right: i-1)
+        self.quick(&array, left: i+1, right: right)
+    }
 }

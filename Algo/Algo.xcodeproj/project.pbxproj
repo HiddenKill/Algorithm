@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		844F1E432412504E00F5076B /* Topic4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F1E422412504E00F5076B /* Topic4.swift */; };
 		844F1E452412A29B00F5076B /* Topic5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F1E442412A29B00F5076B /* Topic5.swift */; };
+		84535865241FCCC700D2D5D2 /* DFSSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84535864241FCCC700D2D5D2 /* DFSSearch.swift */; };
+		84535867241FCCD400D2D5D2 /* BFSSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84535866241FCCD400D2D5D2 /* BFSSearch.swift */; };
+		84535869241FCD0C00D2D5D2 /* DichotomySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84535868241FCD0C00D2D5D2 /* DichotomySearch.swift */; };
 		84675F862410A9C200DDA827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84675F852410A9C200DDA827 /* AppDelegate.swift */; };
 		84675F882410A9C200DDA827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84675F872410A9C200DDA827 /* SceneDelegate.swift */; };
 		84675F8A2410A9C200DDA827 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84675F892410A9C200DDA827 /* ContentView.swift */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		844F1E422412504E00F5076B /* Topic4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic4.swift; sourceTree = "<group>"; };
 		844F1E442412A29B00F5076B /* Topic5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic5.swift; sourceTree = "<group>"; };
+		84535864241FCCC700D2D5D2 /* DFSSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFSSearch.swift; sourceTree = "<group>"; };
+		84535866241FCCD400D2D5D2 /* BFSSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFSSearch.swift; sourceTree = "<group>"; };
+		84535868241FCD0C00D2D5D2 /* DichotomySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DichotomySearch.swift; sourceTree = "<group>"; };
 		84675F822410A9C200DDA827 /* Algo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84675F852410A9C200DDA827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84675F872410A9C200DDA827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84535863241FCCB100D2D5D2 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				84535864241FCCC700D2D5D2 /* DFSSearch.swift */,
+				84535866241FCCD400D2D5D2 /* BFSSearch.swift */,
+				84535868241FCD0C00D2D5D2 /* DichotomySearch.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		84675F792410A9C200DDA827 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,7 @@
 		84675F842410A9C200DDA827 /* Algo */ = {
 			isa = PBXGroup;
 			children = (
+				84535863241FCCB100D2D5D2 /* Search */,
 				84D1DBA32416445D00CADC36 /* Array */,
 				84675F992410AA3100DDA827 /* LinkedList */,
 				84D1DB9F24163EE500CADC36 /* RandomAlgoTest */,
@@ -216,11 +233,14 @@
 				84675F9F24120FEF00DDA827 /* Topic2.swift in Sources */,
 				84E3B5CB24138942006E618B /* Topic6.swift in Sources */,
 				84D1DBA72416449C00CADC36 /* UsualSort.swift in Sources */,
+				84535869241FCD0C00D2D5D2 /* DichotomySearch.swift in Sources */,
 				84675F862410A9C200DDA827 /* AppDelegate.swift in Sources */,
+				84535865241FCCC700D2D5D2 /* DFSSearch.swift in Sources */,
 				844F1E432412504E00F5076B /* Topic4.swift in Sources */,
 				84D1DBA224163F0400CADC36 /* AliDay1.swift in Sources */,
 				84675FA12412192900DDA827 /* Topic3.swift in Sources */,
 				84675F882410A9C200DDA827 /* SceneDelegate.swift in Sources */,
+				84535867241FCCD400D2D5D2 /* BFSSearch.swift in Sources */,
 				84675F9D2410AE5400DDA827 /* Topic1.swift in Sources */,
 				84675F9B2410AD7200DDA827 /* ListNode.swift in Sources */,
 				84E3B5CD24138BF6006E618B /* Topic7.swift in Sources */,

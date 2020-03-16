@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         var arr = [5, 2, 9, 4, 7, 6, 1, 3, 8]
-        UsualSort.heapSort(&arr)
+        UsualSort.quickSort(&arr)
         debugPrint(arr)
                 
         return true
